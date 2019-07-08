@@ -73,7 +73,8 @@ enum user_keycodes {
 
 #define CAPITAL OSM(MOD_LSFT)
 
-#define NAV_BSP LT(NAV_LAYER, KC_BSPC)
+/* #define NAV_BSP LT(NAV_LAYER, KC_BSPC) */
+#define NAV_ENT LT(NAV_LAYER, KC_ENT)
 
 #define GUI_GRV LGUI(KC_GRV)
 
@@ -133,7 +134,7 @@ enum user_keycodes {
 
 #define _________________LOWER_R1__________________ KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
 #define _________________LOWER_R2__________________ KC_6,    KC_7,    KC_8,    KC_9,    KC_0
-#define _________________LOWER_R3__________________ KC_NDSH, KC_MDSH, KC_COMM, KC_DOT,  KC_SLSH
+#define _________________LOWER_R3__________________ KC_NDSH, KC_MDSH, KC_COMM, KC_DOT,  KC_BSLASH
 
 #define _________________RAISE_L1__________________ KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15
 #define _________________RAISE_L2__________________ KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC

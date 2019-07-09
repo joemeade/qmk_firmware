@@ -73,7 +73,7 @@ enum user_keycodes {
 
 #define CAPITAL OSM(MOD_LSFT)
 
-/* #define NAV_BSP LT(NAV_LAYER, KC_BSPC) */
+#define NAV_BSP LT(NAV_LAYER, KC_BSPC)
 #define NAV_ENT LT(NAV_LAYER, KC_ENT)
 
 #define GUI_GRV LGUI(KC_GRV)
@@ -86,6 +86,31 @@ enum user_keycodes {
 #define WM_FULL LALT(LGUI(KC_F))
 #define WM_NEXT LCTL(LALT(LGUI(KC_RGHT)))
 #define WM_PREV LCTL(LALT(LGUI(KC_LEFT)))
+/*
+ *  H left   half
+ *  L right  half
+ *  K top    half
+ *  J bottom half
+ *
+ *  Y top left
+ *  O top right
+ *  N bottom left
+ *  . bottom right
+ *
+ *  U left third
+ *  I right third
+ *  center third
+ *
+ *  M left two thirds
+ *  , right two thirds
+ *
+ *  maximize
+ *  center
+ *  restore
+ *
+ *  next display
+ *  prev display 
+ */
 #define WM_NW   LCTL(LGUI(KC_LEFT))
 #define WM_N    LALT(LGUI(KC_UP))
 #define WM_NE   LCTL(LGUI(KC_RGHT))
@@ -132,7 +157,7 @@ enum user_keycodes {
 #define _________________LOWER_L2__________________ KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define _________________LOWER_L3__________________ KC_MINS, KC_EQL,  KC_GRV,  KC_BSLS, KC_COLN
 
-#define _________________LOWER_R1__________________ KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
+#define _________________LOWER_R1__________________ KC_F6,   KC_F7,   KC_F8,   KC_MINS, KC_EQL
 #define _________________LOWER_R2__________________ KC_6,    KC_7,    KC_8,    KC_9,    KC_0
 #define _________________LOWER_R3__________________ KC_NDSH, KC_MDSH, KC_COMM, KC_DOT,  KC_BSLASH
 
@@ -140,9 +165,9 @@ enum user_keycodes {
 #define _________________RAISE_L2__________________ KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
 #define _________________RAISE_L3__________________ KC_UNDS, KC_PLUS, KC_TILD, KC_PIPE, KC_COLN
 
-#define _________________RAISE_R1__________________ KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20
+#define _________________RAISE_R1__________________ KC_F16,  KC_F17,  KC_F18,  KC_LPRN, KC_RPRN
 #define _________________RAISE_R2__________________ KC_CIRC, KC_AMPR, KC_ASTR, KC_LCBR, KC_RCBR
-#define _________________RAISE_R3__________________ KC_NDSH, KC_MDSH, KC_COMM, KC_DOT,  KC_SLSH
+#define _________________RAISE_R3__________________ KC_NDSH, KC_MDSH, KC_COMM, KC_LBRC, KC_RBRC
 
 #define __________________NAV_L1___________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define __________________NAV_L2___________________ XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN, KC_END

@@ -31,15 +31,10 @@
 
 enum user_layers {
   QWERTY_LAYER,
-  COLEMAK_LAYER,
-  CAMEL_LAYER,
-  KEBAB_LAYER,
-  SNAKE_LAYER,
   LOWER_LAYER,
   RAISE_LAYER,
   NAV_LAYER,
   GUI_LAYER,
-  STENO_LAYER,
   ADJUST_LAYER
 };
 
@@ -61,17 +56,19 @@ enum user_keycodes {
 #define LOWER MO(LOWER_LAYER)
 #define RAISE MO(RAISE_LAYER)
 
-#define GUI_L LT(GUI_LAYER, KC_LBRC)
+/* #define GUI_L LT(GUI_LAYER, KC_LBRC) */
+#define NAV_LBRC LT(NAV_LAYER, KC_LBRC)
 #define GUI_R LT(GUI_LAYER, KC_RBRC)
 
-// TODO: make these tao to curly braces
+// TODO: make these tap to curly braces
 #define HYPER_L ALL_T(LSFT(KC_LBRC))
 #define HYPER_R ALL_T(LSFT(KC_RCBR))
-
+/* #define MEH */
+/* KC_LCBR, KC_RCBR */
 #define CTL_ESC CTL_T(KC_ESC)
 #define CTL_ENT CTL_T(KC_ENT)
 
-#define CAPITAL OSM(MOD_LSFT)
+/* #define CAPITAL OSM(MOD_LSFT) */
 
 #define NAV_BSP LT(NAV_LAYER, KC_BSPC)
 #define NAV_ENT LT(NAV_LAYER, KC_ENT)
@@ -79,8 +76,8 @@ enum user_keycodes {
 #define GUI_GRV LGUI(KC_GRV)
 
 // Dashes (macOS)
-#define KC_NDSH LALT(KC_MINS)
-#define KC_MDSH S(LALT(KC_MINS))
+/* #define KC_NDSH LALT(KC_MINS) */
+/* #define KC_MDSH S(LALT(KC_MINS)) */
 
 // Window manager keys
 #define WM_FULL LALT(LGUI(KC_F))
@@ -145,36 +142,30 @@ enum user_keycodes {
 #define _________________QWERTY_R2_________________ KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
 #define _________________QWERTY_R3_________________ KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
 
-#define _________________COLEMAK_L1________________ KC_Q,    KC_W,    KC_F,    KC_P,    KC_G
-#define _________________COLEMAK_L2________________ KC_A,    KC_R,    KC_S,    KC_T,    KC_D
-#define _________________COLEMAK_L3________________ KC_Z,    KC_X,    KC_C,    KC_V,    KC_B
+#define _________________LOWER_L1__________________ KC_1,    KC_2,    KC_3,    KC_4,    KC_5
+#define _________________LOWER_L2__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define _________________LOWER_L3__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define _________________LOWER_L4__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC
 
-#define _________________COLEMAK_R1________________ KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN
-#define _________________COLEMAK_R2________________ KC_H,    KC_N,    KC_E,    KC_I,    KC_O
-#define _________________COLEMAK_R3________________ KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
+#define _________________LOWER_R1__________________    KC_6, KC_7,        KC_8,      KC_9,     KC_KP_PLUS
+#define _________________LOWER_R2__________________ XXXXXXX, KC_4,        KC_5,      KC_6,    KC_KP_MINUS
+#define _________________LOWER_R3__________________ XXXXXXX, KC_1,        KC_2,      KC_3, KC_KP_ASTERISK
+#define _________________LOWER_R4__________________ KC_BSPC, KC_0, KC_KP_ENTER, KC_KP_DOT,    KC_KP_SLASH
 
-#define _________________LOWER_L1__________________ KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
-#define _________________LOWER_L2__________________ KC_1,    KC_2,    KC_3,    KC_4,    KC_5
-#define _________________LOWER_L3__________________ KC_MINS, KC_EQL,  KC_GRV,  KC_BSLS, KC_COLN
+#define _________________RAISE_L1__________________ KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
+#define _________________RAISE_L2__________________ KC_LPRN, KC_LBRC, KC_LCBR, XXXXXXX, XXXXXXX
+#define _________________RAISE_L3__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
-#define _________________LOWER_R1__________________ KC_F6,   KC_F7,   KC_F8,   KC_MINS, KC_EQL
-#define _________________LOWER_R2__________________ KC_6,    KC_7,    KC_8,    KC_9,    KC_0
-#define _________________LOWER_R3__________________ KC_NDSH, KC_MDSH, KC_COMM, KC_DOT,  KC_BSLASH
-
-#define _________________RAISE_L1__________________ KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15
-#define _________________RAISE_L2__________________ KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
-#define _________________RAISE_L3__________________ KC_UNDS, KC_PLUS, KC_TILD, KC_PIPE, KC_COLN
-
-#define _________________RAISE_R1__________________ KC_F16,  KC_F17,  KC_F18,  KC_LPRN, KC_RPRN
-#define _________________RAISE_R2__________________ KC_CIRC, KC_AMPR, KC_ASTR, KC_LCBR, KC_RCBR
-#define _________________RAISE_R3__________________ KC_NDSH, KC_MDSH, KC_COMM, KC_LBRC, KC_RBRC
+#define _________________RAISE_R1__________________ KC_CIRC, KC_AMPR, KC_ASTR, KC_MINS, KC_EQL
+#define _________________RAISE_R2__________________ XXXXXXX, XXXXXXX, KC_RCBR, KC_RBRC, KC_RPRN
+#define _________________RAISE_R3__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLASH
 
 #define __________________NAV_L1___________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define __________________NAV_L2___________________ XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN, KC_END
 #define __________________NAV_L3___________________ XXXXXXX, LGUI(KC_LEFT), LGUI(KC_UP), LGUI(KC_DOWN), LGUI(KC_RGHT)
 
-#define __________________NAV_R1___________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define __________________NAV_R2___________________ KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX
+#define __________________NAV_R1___________________ LCTL(KC_LEFT), LCTL(KC_DOWN), LCTL(KC_UP), LCTL(KC_RGHT), XXXXXXX
+#define __________________NAV_R2___________________       KC_LEFT,       KC_DOWN,       KC_UP,       KC_RGHT, XXXXXXX
 #define __________________NAV_R3___________________ LALT(KC_LEFT), LALT(KC_DOWN), LALT(KC_UP), LALT(KC_RGHT), XXXXXXX
 
 #define __________________GUI_L1___________________ KC_BTN2, KC_MS_U, KC_BTN1, KC_WH_D, XXXXXXX
@@ -184,30 +175,6 @@ enum user_keycodes {
 #define __________________GUI_R1___________________ XXXXXXX, WM_PREV, WM_NW,   WM_N,    WM_NE
 #define __________________GUI_R2___________________ XXXXXXX, WM_FULL, WM_W,    WM_CNTR, WM_E
 #define __________________GUI_R3___________________ XXXXXXX, WM_NEXT, WM_SW,   WM_S,    WM_SE
-
-#ifdef STENO_ENABLE
-#define _________________STENO_L1__________________ STN_N2,  STN_N3,  STN_N4,  STN_N5,  STN_N6
-#define _________________STENO_L2__________________ STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1
-#define _________________STENO_L3__________________ STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2
-
-#define _________________STENO_R1___________________________ STN_N7,  STN_N8,  STN_N9,  STN_NA,  STN_NB,  STN_NC
-#define _________________STENO_R2___________________________ STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR
-#define _________________STENO_R3___________________________ STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR
-
-#define ____STENO_AO____ STN_A, STN_O
-#define ____STENO_EU____ STN_E, STN_U
-#else
-#define _________________STENO_L1__________________ PV_NUM,  PV_NUM,  PV_NUM,  PV_NUM,  PV_NUM
-#define _________________STENO_L2__________________ PV_LS,   PV_LT,   PV_LP,   PV_LH,   PV_STAR
-#define _________________STENO_L3__________________ PV_LS,   PV_LK,   PV_LW,   PV_LR,   PV_STAR
-
-#define _________________STENO_R1___________________________ PV_NUM,  PV_NUM,  PV_NUM,  PV_NUM,  PV_NUM,  PV_NUM
-#define _________________STENO_R2___________________________ PV_STAR, PV_RF,   PV_RP,   PV_RL,   PV_RT,   PV_RD
-#define _________________STENO_R3___________________________ PV_STAR, PV_RR,   PV_RB,   PV_RG,   PV_RS,   PV_RZ
-
-#define ____STENO_AO____ PV_A, PV_O
-#define ____STENO_EU____ PV_E, PV_U
-#endif
 
 #define __________VOLUME_________ KC_MUTE, KC_VOLD, KC_VOLU
 #define __________MEDIA__________ KC_MPRV, KC_MPLY, KC_MNXT

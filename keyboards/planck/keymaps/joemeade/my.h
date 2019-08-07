@@ -156,7 +156,7 @@ enum user_keycodes {
 #define _________________RAISE_L2__________________ KC_LPRN, KC_LBRC, KC_LCBR, XXXXXXX, XXXXXXX
 #define _________________RAISE_L3__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
-#define _________________RAISE_R1__________________ KC_CIRC, KC_AMPR, KC_ASTR, KC_MINS, KC_EQL
+#define _________________RAISE_R1__________________ KC_CIRC, KC_AMPR, KC_ASTR, KC_MINS, KC_UNDS
 #define _________________RAISE_R2__________________ XXXXXXX, XXXXXXX, KC_RCBR, KC_RBRC, KC_RPRN
 #define _________________RAISE_R3__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLASH
 

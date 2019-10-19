@@ -55,6 +55,7 @@ enum user_keycodes {
 
 #define LOWER MO(LOWER_LAYER)
 #define RAISE MO(RAISE_LAYER)
+#define NAV MO(NAV_LAYER)
 
 /* #define GUI_L LT(GUI_LAYER, KC_LBRC) */
 #define NAV_LBRC LT(NAV_LAYER, KC_LBRC)

@@ -58,6 +58,7 @@ enum user_keycodes {
 
 /* #define GUI_L LT(GUI_LAYER, KC_LBRC) */
 #define NAV_LBRC LT(NAV_LAYER, KC_LBRC)
+#define NAV_F LT(NAV_LAYER, KC_F)
 #define GUI_R LT(GUI_LAYER, KC_RBRC)
 
 // TODO: make these tap to curly braces
@@ -68,12 +69,19 @@ enum user_keycodes {
 #define CTL_ESC CTL_T(KC_ESC)
 #define CTL_ENT CTL_T(KC_ENT)
 
+
 /* #define CAPITAL OSM(MOD_LSFT) */
 
 #define NAV_BSP LT(NAV_LAYER, KC_BSPC)
 #define NAV_ENT LT(NAV_LAYER, KC_ENT)
 
 #define GUI_GRV LGUI(KC_GRV)
+#define GUI_TAB LGUI(KC_TAB)
+
+#define HYP_TAB     ALL_T(KC_TAB)               // Tap for Tab, hold for Hyper (Super+Ctrl+Alt+Shift)
+#define SFT_ENT     SFT_T(KC_ENT)               // Tap for Enter, hold for Shift
+#define SFT_BSP     SFT_T(KC_BSPC)               // Tap for Enter, hold for Shift
+#define MEH_GRV     MEH_T(KC_GRV)               // Tap for Backtick, hold for Meh (Ctrl+Alt+Shift)
 
 // Dashes (macOS)
 /* #define KC_NDSH LALT(KC_MINS) */
@@ -135,7 +143,7 @@ enum user_keycodes {
 #define LAYOUT_preonic_grid_wrapper(...) LAYOUT_preonic_grid(__VA_ARGS__)
 
 #define _________________QWERTY_L1_________________ KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
-#define _________________QWERTY_L2_________________ KC_A,    KC_S,    KC_D,    KC_F,    KC_G
+#define _________________QWERTY_L2_________________ KC_A,    KC_S,    KC_D,    NAV_F,   KC_G
 #define _________________QWERTY_L3_________________ KC_Z,    KC_X,    KC_C,    KC_V,    KC_B
 
 #define _________________QWERTY_R1_________________ KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
@@ -143,9 +151,9 @@ enum user_keycodes {
 #define _________________QWERTY_R3_________________ KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
 
 #define _________________LOWER_L1__________________ KC_1,    KC_2,    KC_3,    KC_4,    KC_5
-#define _________________LOWER_L2__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define _________________LOWER_L3__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define _________________LOWER_L4__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC
+#define _________________LOWER_L2__________________ KC_LPRN, KC_RPRN, XXXXXXX, XXXXXXX, XXXXXXX
+#define _________________LOWER_L3__________________ KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX, XXXXXXX
+#define _________________LOWER_L4__________________ KC_LCBR, KC_RCBR, XXXXXXX, XXXXXXX, KC_BSPC
 
 #define _________________LOWER_R1__________________    KC_6, KC_7,        KC_8,      KC_9,     KC_KP_PLUS
 #define _________________LOWER_R2__________________ XXXXXXX, KC_4,        KC_5,      KC_6,    KC_KP_MINUS
@@ -153,12 +161,14 @@ enum user_keycodes {
 #define _________________LOWER_R4__________________ KC_BSPC, KC_0, KC_KP_ENTER, KC_KP_DOT,    KC_KP_SLASH
 
 #define _________________RAISE_L1__________________ KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
-#define _________________RAISE_L2__________________ KC_LPRN, KC_LBRC, KC_LCBR, XXXXXXX, XXXXXXX
-#define _________________RAISE_L3__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define _________________RAISE_L2__________________ KC_LPRN, KC_RPRN, XXXXXXX, KC_MINS, KC_PLUS
+#define _________________RAISE_L3__________________ KC_LBRC, KC_RBRC, XXXXXXX, KC_UNDS, KC_EQL
+#define _________________RAISE_L4__________________ KC_LCBR, KC_RCBR, XXXXXXX, XXXXXXX, KC_DEL
 
-#define _________________RAISE_R1__________________ KC_CIRC, KC_AMPR, KC_ASTR, KC_MINS, KC_UNDS
-#define _________________RAISE_R2__________________ XXXXXXX, XXXXXXX, KC_RCBR, KC_RBRC, KC_RPRN
+#define _________________RAISE_R1__________________ KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN
+#define _________________RAISE_R2__________________ XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR
 #define _________________RAISE_R3__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLASH
+#define _________________RAISE_R4__________________ KC_DEL,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
 #define __________________NAV_L1___________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define __________________NAV_L2___________________ XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN, KC_END
@@ -166,7 +176,7 @@ enum user_keycodes {
 
 #define __________________NAV_R1___________________ LCTL(KC_LEFT), LCTL(KC_DOWN), LCTL(KC_UP), LCTL(KC_RGHT), XXXXXXX
 #define __________________NAV_R2___________________       KC_LEFT,       KC_DOWN,       KC_UP,       KC_RGHT, XXXXXXX
-#define __________________NAV_R3___________________ LALT(KC_LEFT), LALT(KC_DOWN), LALT(KC_UP), LALT(KC_RGHT), XXXXXXX
+#define __________________NAV_R3___________________ LALT(KC_LEFT),       KC_HOME,      KC_END, LALT(KC_RGHT), XXXXXXX
 
 #define __________________GUI_L1___________________ KC_BTN2, KC_MS_U, KC_BTN1, KC_WH_D, XXXXXXX
 #define __________________GUI_L2___________________ KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U, XXXXXXX

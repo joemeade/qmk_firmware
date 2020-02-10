@@ -21,23 +21,26 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* Base layer (Qwerty)
    *                 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
-   * Hold for Hyper  │  ⇥  │  Q  │  W  │  E  │  R  │  T  │  Y  │  U  │  I  │  O  │  P  │Bksp │ -- Hold for Adjust Layer
+   * Hold for LCAG   │  ⇥  │  Q  │  W  │  E  │  R  │  T  │  Y  │  U  │  I  │  O  │  P  │Bksp │ -- Hold for Adjust Layer
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *  Tap for Esc -- │  ⌃  │  A  │  S  │  D  │  F  │  G  │  H  │  J  │  K  │  L  │  ;  │  '  │
+   *  Hold for Ctrl  │  ⎋  │  A  │  S  │  D  │NAV_F│  G  │  H  │  J  │  K  │  L  │  ;  │  '  │
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
    *                 │  ⇧  │  Z  │  X  │  C  │  V  │  B  │  N  │  M  │  ,  │  .  │  /  │  ⇧  │ -- Tap for Enter
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *                 │ Nav │ Meh │  ⌥  │  ⌘  │  ↓  │ Bsp │Space│  ↑  │  ←  │  ↓  │  ↑  │  →  │ -- Hold for Gui Layer
+   *                 │ LCA │ Meh │  ⌥  │  ⌘  │  ↓  │ Bsp │Space│  ↑  │  ←  │  ↓  │  ↑  │  →  │ -- Hold for Gui Layer
    *                 └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
    *
    * Hold F for Nav Layer
+   * LCAG == App Laucher with Quicksilver Macros
+   * LCA == iTerm naviation
+   * Meh == window mangement
    *
    */
   [QWERTY_LAYER] = LAYOUT_planck_grid_wrapper(
-    HYP_TAB, _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, LT(ADJUST_LAYER, KC_ENT),
-    CTL_ESC, _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, KC_QUOT,
-    KC_LSFT, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, SFT_ENT,
-    NAV,        KC_MEH, KC_LALT, KC_LGUI, LOWER, KC_BSPC, KC_SPC, RAISE, KC_LEFT, KC_DOWN, KC_UP,      LT(GUI_LAYER, KC_RGHT)
+    LCAG_TAB,   _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, LT(ADJUST_LAYER, KC_BSPC),
+    CTL_ESC,    _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, KC_QUOT,
+    KC_LSFT,    _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, SFT_ENT,
+    LCA_T(KC_SPC), KC_MEH, KC_LALT, KC_LGUI, LOWER, KC_BSPC, KC_SPC, RAISE, KC_LEFT, KC_DOWN, KC_UP,      LT(GUI_LAYER, KC_RGHT)
   ),
 
 
@@ -83,11 +86,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *
    *          Large movements -----/```````````````````\   /```````````````````\----- Vim-style arrow keys
    *                 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
-   *                 │     │     │     │     │     │     │ ^ ← │ ^ ↓ │ ^ ↑ │ ^ → │     │     │
+   *                 │     │     │     │     │     │     │ ^ ← │ ^ ↓ │ ^ ↑ │ ^ → │     │     │  screen navigaton
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *                 │     │     │Home │PgUp │PgDn │ End │  ←  │  ↓  │  ↑  │  →  │     │     │
+   *                 │     │     │     │PgUp │PgDn │     │  ←  │  ↓  │  ↑  │  →  │     │     │  arrow
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *                 │     │     │ ⌘ ← │ ⌘ ↑ │ ⌘ ↓ │ ⌘ → │ ⌥ ← │Home │ End │ ⌥ → │     │     │
+   *                 │     │     │ ⌘ ← │ ⌘ ↑ │ ⌘ ↓ │ ⌘ → │ ⌥ ← │Home │ End │ ⌥ → │     │     │  word-wise movements
    *                 ╆━━━━━┪─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
    *                 ┃     ┃     │     │     │     │     │     │     │     │     │     │     │
    *                 ┺━━━━━┹─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘─────┘

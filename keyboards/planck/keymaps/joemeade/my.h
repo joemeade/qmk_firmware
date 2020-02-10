@@ -69,6 +69,7 @@ enum user_keycodes {
 /* KC_LCBR, KC_RCBR */
 #define CTL_ESC CTL_T(KC_ESC)
 #define CTL_ENT CTL_T(KC_ENT)
+#define CTL_OPT CTL_T(KC_ENT)
 
 
 /* #define CAPITAL OSM(MOD_LSFT) */
@@ -80,6 +81,7 @@ enum user_keycodes {
 #define GUI_TAB LGUI(KC_TAB)
 
 #define HYP_TAB     ALL_T(KC_TAB)               // Tap for Tab, hold for Hyper (Super+Ctrl+Alt+Shift)
+#define LCAG_TAB    LCAG_T(KC_TAB)
 #define SFT_ENT     SFT_T(KC_ENT)               // Tap for Enter, hold for Shift
 #define SFT_BSP     SFT_T(KC_BSPC)               // Tap for Enter, hold for Shift
 #define MEH_GRV     MEH_T(KC_GRV)               // Tap for Backtick, hold for Meh (Ctrl+Alt+Shift)
@@ -172,7 +174,7 @@ enum user_keycodes {
 #define _________________RAISE_R4__________________ KC_DEL,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
 #define __________________NAV_L1___________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define __________________NAV_L2___________________ XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN, KC_END
+#define __________________NAV_L2___________________ XXXXXXX, XXXXXXX, KC_PGUP, KC_PGDN, XXXXXXX
 #define __________________NAV_L3___________________ XXXXXXX, LGUI(KC_LEFT), LGUI(KC_UP), LGUI(KC_DOWN), LGUI(KC_RGHT)
 
 #define __________________NAV_R1___________________ LCTL(KC_LEFT), LCTL(KC_DOWN), LCTL(KC_UP), LCTL(KC_RGHT), XXXXXXX

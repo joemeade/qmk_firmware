@@ -156,17 +156,17 @@ enum user_keycodes {
 #define _________________LOWER_L1__________________ KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define _________________LOWER_L2__________________ KC_LPRN, KC_RPRN, XXXXXXX, XXXXXXX, XXXXXXX
 #define _________________LOWER_L3__________________ KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX, XXXXXXX
-#define _________________LOWER_L4__________________ KC_LCBR, KC_RCBR, XXXXXXX, XXXXXXX, KC_BSPC
+#define _________________LOWER_L4__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL
 
 #define _________________LOWER_R1__________________    KC_6, KC_7,        KC_8,      KC_9,     KC_KP_PLUS
 #define _________________LOWER_R2__________________ XXXXXXX, KC_4,        KC_5,      KC_6,    KC_KP_MINUS
 #define _________________LOWER_R3__________________ XXXXXXX, KC_1,        KC_2,      KC_3, KC_KP_ASTERISK
-#define _________________LOWER_R4__________________ KC_BSPC, KC_0, KC_KP_ENTER, KC_KP_DOT,    KC_KP_SLASH
+#define _________________LOWER_R4__________________  KC_DEL, KC_0, KC_KP_ENTER, KC_KP_DOT,    KC_KP_SLASH
 
 #define _________________RAISE_L1__________________ KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
-#define _________________RAISE_L2__________________ KC_LPRN, KC_RPRN, XXXXXXX, KC_MINS, KC_PLUS
-#define _________________RAISE_L3__________________ KC_LBRC, KC_RBRC, XXXXXXX, KC_UNDS, KC_EQL
-#define _________________RAISE_L4__________________ KC_LCBR, KC_RCBR, XXXXXXX, XXXXXXX, KC_DEL
+#define _________________RAISE_L2__________________ KC_LPRN, KC_RPRN, XXXXXXX, KC_MINS, XXXXXXX
+#define _________________RAISE_L3__________________ KC_LBRC, KC_RBRC, XXXXXXX, KC_UNDS, XXXXXXX
+#define _________________RAISE_L4__________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL
 
 #define _________________RAISE_R1__________________ KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN
 #define _________________RAISE_R2__________________ XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR
